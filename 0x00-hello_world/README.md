@@ -1,0 +1,1 @@
+this project has 7 task questions. each of them is helping student to understand how to run a c file by using gcc.
