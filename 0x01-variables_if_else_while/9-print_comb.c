@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * main - Print all the single digit numbers separated by , ,followed by a space
+ * main - Print all the single digit numbers separated by , and  a space
  * Return: 0
  */
 int main(void)
