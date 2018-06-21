@@ -18,12 +18,12 @@ int main(void)
 			putchar(',');
 			putchar(' ');
 		}
-		units_digit++;
 		if (units_digit == 9)
 		{
 			tens_digit++;
-			units_digit = 0;
+			units_digit = -1;
 		}
+		units_digit++;
 	}
 	putchar('\n');
 	return (0);
