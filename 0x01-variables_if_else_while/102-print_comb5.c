@@ -21,7 +21,7 @@ int main(void)
 		{
 			c = i / 10;
 			d = i % 10;
-			if (((c + d) > (a + b)) && a <= c)
+			if ((c*10 + d) > (a*10 + b))
 			{
 				putchar('0' + a);
 				putchar('0' + b);
