@@ -1,6 +1,16 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
+ * main - print sum of multiples of 3 or 5 below 1024
+ * Return: no return
+ */
+int main(void)
+{
+	sum_multiple_3_5(1024);
+	return (0);
+}
+
+/**
  * sum_multiple_3_5 - list all the natural numbers below n that are multiples
  * of 3 or 5
  * @n: the limit number
