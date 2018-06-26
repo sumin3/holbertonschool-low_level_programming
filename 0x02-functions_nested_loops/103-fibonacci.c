@@ -5,10 +5,10 @@
  */
 int main(void)
 {
-	long int a = 1;
-	long int b = 2;
+	int a = 1;
+	int b = 2;
 	long int f;
-        long int i;
+	int i;
 	long int even_sum = 2;
 
 	for (i = 0; i <= 4000000 - 3 ; i++)
@@ -19,6 +19,6 @@ int main(void)
 		if ((f % 2) == 0)
 			even_sum = even_sum + f;
 	}
-	printf("%lu\n", even_sum);
+	printf("%ld\n", even_sum);
 	return (0);
 }
