@@ -7,11 +7,10 @@ int main(void)
 {
 	int a = 1;
 	int b = 2;
-	long int f;
-	int i;
+	long int f = 0;
 	long int even_sum = 2;
 
-	for (i = 0; i <= 4000000 - 3 ; i++)
+	while (f <= 4000000)
 	{
 		f = a + b;
 		a = b;
