@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * times_table - prints the n times table
+ * print_times_table - prints the n times table
  * @n: the number of time that need to print
  * Return: no return
  */
