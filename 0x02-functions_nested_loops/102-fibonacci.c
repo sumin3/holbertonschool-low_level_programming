@@ -11,12 +11,12 @@ int main(void)
 	int i;
 
 	printf("%ld, %ld, ", a, b);
-	for (i = 0; i <= 46; i++)
+	for (i = 0; i <= 47; i++)
 	{
 		f = a + b;
 		a = b;
 		b = f;
-		if (i == 46)
+		if (i == 47)
 			printf("%ld", f);
 		else
 			printf("%ld, ", f);
