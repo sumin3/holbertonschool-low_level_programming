@@ -22,9 +22,7 @@ void sum_multiple_3_5(int n)
 
 	for (n = n - 1; n >= 0; n--)
 	{
-		if ((n % 3) == 0)
-			sum = sum + n;
-		if ((n % 5) == 0)
+		if (((n % 3) == 0) || ((n % 5) == 0))
 			sum = sum + n;
 	}
 	printf("%d\n", sum);
