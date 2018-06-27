@@ -12,7 +12,7 @@ int main(void)
 	long int a1, a2, b1, b2, sum1, sum2, overflow1, overflow2, p1, p2;
 
 	printf("%lu, %lu, ", a, b);
-	for (i = 0; i <= 98 - 4; i++)
+	for (i = 0; i <= 98 - 3; i++)
 	{
 		if (i < 89)
 		{
@@ -47,7 +47,7 @@ int main(void)
 			sum1 = a1 + b1 + overflow2;
 			p1 = sum1 % 10000000000;
 			overflow1 = sum1 / 10000000000;
-			if (i == 94)
+			if (i == 95)
 				printf("%lu%lu%lu", overflow1, p1, p2);
 			else
 				printf("%lu%lu, ", p1, p2);
