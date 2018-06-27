@@ -49,6 +49,8 @@ int main(void)
 			overflow1 = sum1 / 10000000000;
 			if (i == 95)
 				printf("%lu%lu%lu", overflow1, p1, p2);
+			else if (i == 94)
+				printf("%lu%lu%lu, ", overflow1, p1, p2);
 			else
 				printf("%lu%lu, ", p1, p2);
 		}
