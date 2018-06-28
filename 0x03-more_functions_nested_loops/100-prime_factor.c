@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int num = 1231952;
+	long int num = 612852475143;
 	int largest = 0;
 	int prime = 3;
 	int count = 0;
