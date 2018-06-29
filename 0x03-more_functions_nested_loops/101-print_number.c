@@ -13,7 +13,7 @@ void print_number(int n)
 
 	digit = digit_num(n);
 	if (digit == 0)
-			_putchar('0' + n);
+		_putchar('0' + n);
 	else if (digit > 0)
 	{
 		if (n < 0)
