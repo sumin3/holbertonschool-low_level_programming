@@ -12,5 +12,8 @@ void print_line(int n);
 void print_diagonal(int n);
 void print_square(int size);
 void print_triangle(int size);
+void print_number(int n);
+int digit_num(int n);
+int ten_to_power(int n);
 
 #endif /* _HOLBERTON_H_ */
