@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <math.h>
 /**
  * _atoi - convert a string to a integer
  * @s: the string that need to convert
