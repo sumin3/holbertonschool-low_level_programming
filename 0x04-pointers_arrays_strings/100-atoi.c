@@ -6,7 +6,8 @@
  */
 int _atoi(char *s)
 {
-	int i, j, f = 0, num, sum = 0, minus = 1;
+	int i, j, f = 0, num, minus = 1;
+	unsigned int sum = 0;
 
 	for (i = 0; s[i] != '\0' && f != 2; i++)
 	{
