@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * _strncpy - copies a string.
  * @dest: the copied string
@@ -12,6 +13,10 @@ char *_strncpy(char *dest, char *src, int n)
 
 	for (i = 0; i < n && src[i] != '\0'; i++)
 		dest[i] = src[i];
-	dest[i + 1] = '\0';
+	for ( ; i < n; i++)
+	{
+		dest[i] = '\0';
+		printf("i =%d\n", i);
+	}
 	return (dest);
 }
