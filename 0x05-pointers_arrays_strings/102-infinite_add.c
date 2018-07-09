@@ -38,13 +38,13 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		{
 			sum1 = sum % 10;
 			r[i] = sum1 + '0';
+			overflow = 1;
 		}
 		else
+		{
 			r[i] = sum + '0';
-		if (sum > 9)
-			overflow = 1;
-		else
 			overflow = 0;
+		}
 	}
 	if (r[0] == '0')
 	{
