@@ -48,11 +48,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	if (r[0] == '0')
 	{
-		if(len + 1 >= size_r && len >= size_r)
+		if (len + 1 >= size_r && len >= size_r)
 			return (0);
-		for( j = 0; j <= len; j++)
+		for (j = 0; j <= len; j++)
 		{
-			r[j] = r[j+1];
+			r[j] = r[j + 1];
 		}
 		r[len] = '\0';
 	}
