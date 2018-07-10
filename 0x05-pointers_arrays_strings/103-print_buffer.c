@@ -48,7 +48,7 @@ void print_buffer(char *b, int size)
 				break;
 			}
 			if (k >= size)
-				b[k] = '\0';
+				b[k] = ' ';
 			else
 				printf("%c", b[k]);
 		}
