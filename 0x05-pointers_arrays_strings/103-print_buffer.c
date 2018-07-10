@@ -17,6 +17,8 @@ void print_buffer(char *b, int size)
 		num_of_lines = line + 1;
 	else
 		num_of_lines = line;
+	if (size <= 0)
+		printf("\n");
 	for (i = 0; i < num_of_lines; i++)
 	{
 		printf("%08x: ", num);
