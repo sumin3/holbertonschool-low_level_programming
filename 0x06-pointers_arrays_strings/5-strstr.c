@@ -13,6 +13,8 @@ char *_strstr(char *haystack, char *needle)
 
 	while (needle[len++] != '\0')
 		;
+	if (len == 0)
+		return (haystack);
 	for (i = match; haystack[i] != '\0'; i++)
 	{
 		if (haystack[i] == needle[0])
@@ -34,7 +36,5 @@ char *_strstr(char *haystack, char *needle)
 				return (haystack + find_1st);
 		}
 	}
-	if (len == 0)
-		return (haystack);
 	return ('\0');
 }
