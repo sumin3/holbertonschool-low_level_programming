@@ -6,11 +6,10 @@
  */
 int is_palindrome(char *s)
 {
-	int i = 0;
+	int len;
 
-	while (s[i] != '\0')
-		i++;
-	return (help1(0, i - 1, i, s));
+	len = _strlen_recursion(s);
+	return (help1(0, len - 1, len, s));
 }
 /**
  * help1 - help function for is_palindrome
@@ -32,4 +31,16 @@ int help1(int head, int tail, int len, char *s)
 			return (help1(head + 1, tail - 1, len, s));
 	}
 	return (1);
+}
+/**
+ * _strlen_recursion - return the length of a string
+ * @s: the string that need to check
+ * Return: return the length
+ */
+int _strlen_recursion(char *s)
+{
+
+	if (*s != '\0')
+		return (1 + _strlen_recursion(s + 1));
+	return (0);
 }
