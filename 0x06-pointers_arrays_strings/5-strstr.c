@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * _strstr - find the firs occurrence of the substring needle in the string
  * @haystack: the string that use for seaching.
@@ -33,7 +34,7 @@ char *_strstr(char *haystack, char *needle)
 				return (haystack + find_1st);
 		}
 	}
-	if (match == 0)
-		return (0);
+	if (len == 0)
+		return (haystack);
 	return ('\0');
 }
