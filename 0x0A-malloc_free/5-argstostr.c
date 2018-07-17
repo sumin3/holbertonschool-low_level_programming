@@ -9,11 +9,17 @@
 char *argstostr(int ac, char **av)
 {
 	char *arg;
-	int i, j, index = 0;
+	int w, h, i, j, index = 0, len = 0;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	arg = malloc(sizeof(char) * ac);
+	for (h = 0; h < ac; h++)
+	{
+		for (w = 0; av[h][w] != '\0'; w++)
+			len++;
+		len++;
+	}
+	arg = (char *)malloc(sizeof(char) * (len + 1));
 	if (arg == NULL)
 		return (NULL);
 
@@ -27,5 +33,6 @@ char *argstostr(int ac, char **av)
 		arg[index] = '\n';
 
 	}
+	arg[index] = '\0';
 	return (arg);
 }
