@@ -20,7 +20,7 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	for (i = 0; i < len1; i++)
 		concat[i] = s1[i];
-	for (j = i; j < len1 + len2 + 1; j++)
+	for (j = i; j <= len1 + len2 + 1; j++)
 	{
 		concat[j] = s2[k];
 		k++;
