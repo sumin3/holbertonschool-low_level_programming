@@ -31,7 +31,6 @@ char **strtow(char *str)
 			for ( ; str[j] != ' '; j++)
 				sub_len++;
 			s[k] = malloc(sizeof(char) * sub_len);
-			sub_len = 0;
 			if (s[k] == NULL)
 			{
 				while (k >= 0)
@@ -43,6 +42,7 @@ char **strtow(char *str)
 				return (NULL);
 			}
 		}
+		sub_len = 0;
 		k++;
 	}
 	for (c = 0; str[c] != '\0'; c++)
@@ -53,7 +53,11 @@ char **strtow(char *str)
 			b++;
 		}
 		if (str[c] == ' ' && str[c + 1] != ' ')
+		{
+
 			a++;
+			b = 0;
+		}
 	}
 	return (s);
 
