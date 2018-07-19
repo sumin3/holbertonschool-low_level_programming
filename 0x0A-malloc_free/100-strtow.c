@@ -44,6 +44,7 @@ char **strtow(char *str)
 			/* find the len of a word */
 			for (p = j; str[p] != '\0' && str[p] != ' '; p++)
 				char_in_word++;
+			/*printf("sub%d\n", char_in_word);*/
 			/* malloc space for one row (one word) */
 			s[i] = malloc(sizeof(char) * (char_in_word + 1));
 			/* check if malloc space sucessfully or not */
@@ -70,5 +71,7 @@ char **strtow(char *str)
 		}
 	}
 	s[i] = NULL;
+	if (s == NULL)
+		return (NULL);
 	return (s);
 }
