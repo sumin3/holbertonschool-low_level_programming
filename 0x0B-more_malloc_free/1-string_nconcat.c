@@ -29,7 +29,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (concat == NULL)
 		return (NULL);
 	/* copy string */
-	for (i = 0; i < len1 + len2 + 1; i++)
+	for (i = 0; i < len1 + n + 1; i++)
 	{
 		if (i < len1)
 			concat[i] = s1[i];
