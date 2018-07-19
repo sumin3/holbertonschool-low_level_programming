@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
 /**
  * strtow - splits a string into words
@@ -8,57 +9,66 @@
 char **strtow(char *str)
 {
 	char **s;
-	int len = 0, i = 0, j = 0, sub_len = 0, k = 0, a = 0, c = 0, b = 0;
-
+	int word = 0, i = 0, j = 0, p = 0, k, sub_len = 0;
+	/* return NULL if string is empty */
 	if (str == NULL)
 		return (NULL);
+	/* find how many words in a string */
 	while (str[i] != '\0')
 	{
 		if (str[i] == ' ')
 		{
-			if(str[i + 1] != ' ')
-				len++;
+			if (str[i + 1] != ' ')
+				word++;
 		}
 		i++;
 	}
-	s = malloc(sizeof(char *) * len);
+	if (str[0] != ' ')
+		word++;
+	/* malloc space for column */
+	s = malloc(sizeof(char *) * (word + 1));
+	/* check if malloc space sucessfully or not */
 	if (s == NULL)
 		return (NULL);
-	for (j = 0; str[j] != '\0'; j++)
+	for (i = 0; str[j] != '\0'; i++)
 	{
-		if (str[j] != ' ')
+		/* do this if character is a space character */
+		if (str[j] == ' ')
 		{
-			for ( ; str[j] != ' '; j++)
+			i--;/* i is the index of column */
+			j++; /* j is the first index of each word */
+		}
+		/* do this if character is not a space character */
+		else
+		{
+			/* find the len of a word */
+			for (p = j; str[p] != '\0' && str[p] != ' '; p++)
 				sub_len++;
-			s[k] = malloc(sizeof(char) * sub_len);
-			if (s[k] == NULL)
+			/* malloc space for one row (one word) */
+			s[i] = malloc(sizeof(char) * (sub_len + 1));
+			/* check if malloc space sucessfully or not */
+			if (s[i] == NULL)
 			{
-				while (k >= 0)
+				while (i >= 0)
 				{
-					free(s[k - 1]);
-					k--;
+					free(s[i - 1]);
+					i--;
 				}
 				free(s);
 				return (NULL);
 			}
-		}
-		sub_len = 0;
-		k++;
-	}
-	for (c = 0; str[c] != '\0'; c++)
-	{
-		if (str[c] != ' ')
-		{
-			s[a][b] = str[c];
-			b++;
-		}
-		if (str[c] == ' ' && str[c + 1] != ' ')
-		{
-
-			a++;
-			b = 0;
+			/* copy word to s */
+			for (k = 0; k < sub_len; k++)
+			{
+				s[i][k] = str[j];
+				j++;
+			}
+			/* add null terminal character at the end of string */
+			s[i][k] = '\0';
+			/* reset sub_len */
+			sub_len = 0;
 		}
 	}
+	s[i] = NULL;
 	return (s);
-
 }
