@@ -14,28 +14,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int len1 = 0, len2 = 0, i;
 	/* if null is passed, set it as empty string */
 	if (s1 == NULL)
-	{
-		s1 = malloc(sizeof(char));
-		if (s1 == NULL)
-			return (NULL);
-		*s1 = '\0';
-	}
+		s1 = "";
 	if (s2 == NULL)
-	{
-		s2 = malloc(sizeof(char));
-		if (s2 == NULL)
-			return (NULL);
-		*s2 = '\0';
-	}
+		s2 = "";
 	/* find len for s1 and s2 */
 	while (s1[len1] != '\0')
 		len1++;
 	while (s2[len2] != '\0')
 		len2++;
-	if (n <= len2)
-		len2 = n;
+	if (n > len2)
+		n = len2;
 	/* malloc empty space for concat */
-	concat = malloc(sizeof(char) * (len1 + len2 + 1));
+	concat = malloc(sizeof(char) * (len1 + n + 1));
 	if (concat == NULL)
 		return (NULL);
 	/* copy string */
@@ -46,7 +36,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		else
 			concat[i] = s2[i - len1];
 	}
-	free(s1);
-	free(s2);
 	return (concat);
 }
