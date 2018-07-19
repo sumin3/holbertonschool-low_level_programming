@@ -34,13 +34,13 @@ char **strtow(char *str)
 	/* check if malloc space sucessfully or not */
 	if (s == NULL)
 		return (NULL);
-	for (i = 0; i <= len; i++)
+	for (i = 0; str[j] != '\0'; i++)
 	{
 		/* do this if character is a space character */
 		if (str[j] == ' ')
 		{
 			if (str[j + 1] == '\0' && f == 0)
-				return (NULL);
+			return (NULL);
 			i--;/* i is the index of column */
 			j++; /* j is the first index of each word */
 		}
