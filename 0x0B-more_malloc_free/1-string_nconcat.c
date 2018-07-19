@@ -46,5 +46,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		else
 			concat[i] = s2[i - len1];
 	}
+	free(s1);
+	free(s2);
 	return (concat);
 }
