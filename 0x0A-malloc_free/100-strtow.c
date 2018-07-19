@@ -9,7 +9,7 @@
 char **strtow(char *str)
 {
 	char **s;
-	int word = 0, i = 0, j = 0, p = 0, k, sub_len = 0;
+	int word = 0, i = 0, j = 0, p = 0, k, char_in_word = 0;
 	/* return NULL if string is empty */
 	if (str == NULL)
 		return (NULL);
@@ -26,7 +26,7 @@ char **strtow(char *str)
 	if (str[0] != ' ')
 		word++;
 	/* malloc space for column */
-	s = malloc(sizeof(char *) * word + 1);
+	s = (char **)malloc(sizeof(char *) * word + 1);
 	/* check if malloc space sucessfully or not */
 	if (s == NULL)
 		return (NULL);
@@ -43,9 +43,9 @@ char **strtow(char *str)
 		{
 			/* find the len of a word */
 			for (p = j; str[p] != '\0' && str[p] != ' '; p++)
-				sub_len++;
+				char_in_word++;
 			/* malloc space for one row (one word) */
-			s[i] = malloc(sizeof(char) * sub_len);
+			s[i] = (char *)malloc(sizeof(char) * char_in_word + 1);
 			/* check if malloc space sucessfully or not */
 			if (s[i] == NULL)
 			{
@@ -58,15 +58,15 @@ char **strtow(char *str)
 				return (NULL);
 			}
 			/* copy word to s */
-			for (k = 0; k < sub_len; k++)
+			for (k = 0; k < char_in_word; k++)
 			{
 				s[i][k] = str[j];
 				j++;
 			}
 			/* add null terminal character at the end of string */
 			s[i][k] = '\0';
-			/* reset sub_len */
-			sub_len = 0;
+			/* reset */
+			char_in_word = 0;
 		}
 	}
 	s[i] = NULL;
