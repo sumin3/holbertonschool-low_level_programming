@@ -9,9 +9,13 @@
 char **strtow(char *str)
 {
 	char **s;
-	int word = 0, i = 0, j = 0, p = 0, k, char_in_word = 0;
+	int word = 0, i = 0, j = 0, p = 0, k, char_in_word = 0, len, f = 0;
 	/* return NULL if string is empty */
 	if (str == NULL)
+		return (NULL);
+	for (len = 0; str[len] != '\0'; len++)
+		;
+	if (len == 0)
 		return (NULL);
 	/* find how many words in a string */
 	while (str[i] != '\0')
@@ -30,21 +34,23 @@ char **strtow(char *str)
 	/* check if malloc space sucessfully or not */
 	if (s == NULL)
 		return (NULL);
-	for (i = 0; str[j] != '\0'; i++)
+	for (i = 0; i <= len; i++)
 	{
 		/* do this if character is a space character */
 		if (str[j] == ' ')
 		{
+			if (str[j + 1] == '\0' && f == 0)
+				return (NULL);
 			i--;/* i is the index of column */
 			j++; /* j is the first index of each word */
 		}
 		/* do this if character is not a space character */
 		else
 		{
+			f = 1;
 			/* find the len of a word */
 			for (p = j; str[p] != '\0' && str[p] != ' '; p++)
 				char_in_word++;
-			/*printf("sub%d\n", char_in_word);*/
 			/* malloc space for one row (one word) */
 			s[i] = malloc(sizeof(char) * (char_in_word + 1));
 			/* check if malloc space sucessfully or not */
@@ -70,8 +76,5 @@ char **strtow(char *str)
 			char_in_word = 0;
 		}
 	}
-
-
-
 	return (s);
 }
