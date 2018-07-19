@@ -70,8 +70,8 @@ char **strtow(char *str)
 			char_in_word = 0;
 		}
 	}
-	s[i] = NULL;
-	if (s == NULL)
-		return (NULL);
+
+
+
 	return (s);
 }
