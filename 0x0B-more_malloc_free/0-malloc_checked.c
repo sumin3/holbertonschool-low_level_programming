@@ -9,7 +9,7 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	unsigned int *mal;
+	void *mal;
 	/* malloc space for mal */
 	mal = malloc(b);
 	/* if malloc space fail exit 98 */
