@@ -26,7 +26,7 @@ char **strtow(char *str)
 	if (str[0] != ' ')
 		word++;
 	/* malloc space for column */
-	s = malloc(sizeof(char *) * word);
+	s = malloc(sizeof(char *) * word + 1);
 	/* check if malloc space sucessfully or not */
 	if (s == NULL)
 		return (NULL);
@@ -45,7 +45,7 @@ char **strtow(char *str)
 			for (p = j; str[p] != '\0' && str[p] != ' '; p++)
 				sub_len++;
 			/* malloc space for one row (one word) */
-			s[i] = malloc(sizeof(char) * (sub_len + 1));
+			s[i] = malloc(sizeof(char) * sub_len);
 			/* check if malloc space sucessfully or not */
 			if (s[i] == NULL)
 			{
