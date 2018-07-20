@@ -32,7 +32,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size < old_size)
 	{
 		for (j = 0; j < new_size; j++)
-			new_array[i] = *((char *)ptr + j);
+			new_array[j] = *((char *)ptr + j);
 	}
 	return (new_array);
 }
