@@ -14,6 +14,13 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	char *new_array;
 	unsigned int i, j;
 
+	if (ptr == NULL)
+	{
+		new_array = malloc(new_size);
+		if (new_array == NULL)
+			return (NULL);
+		return (new_array);
+	}
 	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
