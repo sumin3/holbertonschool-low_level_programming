@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 char *_strdup(char *str);
-int _strlen(char *s);
 /**
  * new_dog - create a new dog
  * @name: the name that need to copy
@@ -35,19 +34,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	d->age = age;
 	return (d);
 
-}
-/**
- * _strlen - return the length of a string
- * @s:the string that need to find the length
- * Return: return the length of the string
- */
-int _strlen(char *s)
-{
-	int length = 0;
-
-	while (s[length] != '\0')
-		length++;
-	return (length);
 }
 /**
  * _strdup - returns a pointer to a new string which is duplicate of the
