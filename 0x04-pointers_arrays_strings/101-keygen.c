@@ -7,10 +7,10 @@
  */
 int main(void)
 {
-	int rand_num, sum = 0;
+	int rand_num = 0, sum = 0;
 
 	rand_num = rand() % 128;
-	while (sum < 2772 - 128)
+	while (sum <= 2772 - 128)
 	{
 		_putchar(rand_num);
 		sum = sum + rand_num;
