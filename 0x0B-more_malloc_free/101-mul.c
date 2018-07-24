@@ -15,12 +15,14 @@ int main(int argc, char *argv[])
 	int i, j, k, h, p, n, flag = 0, num2 = 0, len1 = 0, len2 = 0;
 	char *mul;
 	char *num1;
-
+	/* if not two numbers, exit */
 	if (argc - 1 != 2)
 	{
 		printf("Error\n");
 		exit(98);
 	}
+	/* find len of two number */
+	/* print error if not compose by digits */
 	for (i = 1; i < argc; i++)
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
@@ -36,25 +38,33 @@ int main(int argc, char *argv[])
 				len2++;
 		}
 	}
+	/* allocate space for mul and num */
 	mul = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (mul == NULL)
 		exit(98);
 	num1 = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (num1 == NULL)
 		exit(98);
-	*mul = '0';
+	/* use infinite_add function to add number */
 	for (k = 0; argv[2][k] != '\0'; k++)
 	{
+		/* num2 is the current digit of number 2 */
 		num2 = argv[2][k] - '0';
+		/* init num1, make it equal 0 */
 		num1 = infinite_add("0", "0", num1, len1 + len2 + 1);
+		/* use add instead of mul to multiplies two number */
+		/* keep adding num1 (number 1) by num2 times (by using loop) */
 		for (h = 0; h < num2; h++)
 		{
 			num1 = infinite_add(num1, argv[1], num1, len1 +
 					    len2 + 1);
 		}
+		/* add zero at the end of string num1 */
 		num1 = add_zero(num1, len2 - k - 1);
+		/* add the result of num1 to get the final result */
 		mul = infinite_add(mul, num1, mul, len1 + len2 + 1);
 	}
+	/* remove leading zero */
 	for (p = 0; mul[p] != '\0'; p++)
 	{
 		if (mul[p] != '0')
@@ -72,6 +82,7 @@ int main(int argc, char *argv[])
 			n = 1;
 		}
 	}
+	/* add '\0' at the end of string mul */
 	mul[n] = '\0';
 	printf("%s\n", mul);
 	return (0);
@@ -85,9 +96,10 @@ int main(int argc, char *argv[])
 char *add_zero(char *sum, int num)
 {
 	int len = 0, i = 0;
-
+	/* find len of sum */
 	while (sum[len] != '\0')
 		len++;
+	/* add num zeros to the end of sum by looping num times */
 	for (i = len; i < len + num; i++)
 	{
 		sum[i] = '0';
