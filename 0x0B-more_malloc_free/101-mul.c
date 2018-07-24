@@ -14,17 +14,17 @@ char *add_zero(char *sum, int num);
  */
 int main(int argc, char *argv[])
 {
-	int i, j, k, h, p, num = 0, len1 = 0, len2 = 0;
-	char *product;
-	char *sum;
+	int i, j, k, h, p, num2 = 0, len1 = 0, len2 = 0;
+	char *mul;
+	char *num1;
 
 	if (argc - 1 != 2)
 	{
 		print_error();
 		exit(98);
 	}
-	printf("c%d\n", argc);
-	printf("v%s\n", argv[1]);
+	printf("c: %d\n", argc);
+	printf("v: %s\n", argv[1]);
 	for (i = 1; i < argc; i++)
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
@@ -41,29 +41,29 @@ int main(int argc, char *argv[])
 		}
 	}
 	printf("len1 %d, len2 %d\n", len1, len2);
-	product = malloc(sizeof(char) * (len1 + len2 + 1));
-	if (product == NULL)
+	mul = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (mul == NULL)
 		exit(98);
-	sum = malloc(sizeof(char) * (len1 + len2 + 1));
-	if (sum == NULL)
+	num1 = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (num1 == NULL)
 		exit(98);
-	*product = '0';
+	*mul = '0';
 	for (k = 0; argv[2][k] != '\0'; k++)
 	{
-		num = argv[2][k] - '0';
-		printf("num%d\n",num);
+		num2 = argv[2][k] - '0';
+		printf("current num: %d\n",num2);
 		for (p = 0; argv[1][p] != '\0'; p++)
-			sum[p] = argv[1][p];
-		sum[p] = '\0';
-		for (h = 0; h < num - 1; h++)
+			num1[p] = argv[1][p];
+		num1[p] = '\0';
+		for (h = 0; h < num2 - 1; h++)
 		{
-			sum = infinite_add(sum,argv[1], sum, len1 + len2 + 1);
+			num1 = infinite_add(num1,argv[1], num1, len1 + len2 + 1);
 		}
-		printf("sum %s\n", sum);
-		sum = add_zero(sum, len2 - k -1);
-		printf("zero %s\n", sum);
-		product = infinite_add(product, sum, product, len1 + len2 + 1);
-		printf("p%s\n", product);
+		printf("sum: %s\n", num1);
+		num1 = add_zero(num1, len2 - k -1);
+		printf("zero: %s\n", num1);
+		mul = infinite_add(mul, num1, mul, len1 + len2 + 1);
+		printf("product: %s\n", mul);
 
 	}
 	return (0);
