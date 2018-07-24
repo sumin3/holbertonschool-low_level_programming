@@ -33,20 +33,8 @@ void print_buffer(char *b, int size)
 		}
 		for (k = head; k <= tail; k++)
 		{
-			switch (b[k])
-			{
-			case '\0':
-			case '\n':
-			case '\1':
-			case '\2':
-			case '\3':
-			case '\4':
-			case '\5':
-			case '\6':
-			case '\7':
+			if (b[k] < 32 || b[k] > 126)
 				b[k] = '.';
-				break;
-			}
 			if (k >= size)
 				b[k] = ' ';
 			else
