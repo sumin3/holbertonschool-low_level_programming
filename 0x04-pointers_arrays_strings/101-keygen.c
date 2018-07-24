@@ -12,10 +12,10 @@ int main(void)
 	rand_num = rand() % 128;
 	while (sum <= 2772 - 128)
 	{
-		_putchar(rand_num);
+		putchar(rand_num);
 		sum = sum + rand_num;
 	}
 	rand_num = 2772 - sum;
-	_putchar(rand_num);
+	putchar(rand_num);
 	return (0);
 }
