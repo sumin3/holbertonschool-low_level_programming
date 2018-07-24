@@ -12,7 +12,7 @@ char *add_zero(char *sum, int num);
  */
 int main(int argc, char *argv[])
 {
-	int i, j, k, h, num2 = 0, len1 = 0, len2 = 0;
+	int i, j, k, h, p, n, flag = 0, num2 = 0, len1 = 0, len2 = 0;
 	char *mul;
 	char *num1;
 
@@ -55,6 +55,24 @@ int main(int argc, char *argv[])
 		num1 = add_zero(num1, len2 - k - 1);
 		mul = infinite_add(mul, num1, mul, len1 + len2 + 1);
 	}
+	for (p = 0; mul[p] != '\0'; p++)
+	{
+		if (mul[p] != '0')
+		{
+			for (n = 0; mul[p] != '\0'; n++)
+			{
+				mul[n] = mul[p];
+				p++;
+				flag = 1;
+			}
+		}
+		else if (mul[p] == '0' && flag == 0)
+		{
+			mul[0] = '0';
+			n = 1;
+		}
+	}
+	mul[n] = '\0';
 	printf("%s\n", mul);
 	return (0);
 }
