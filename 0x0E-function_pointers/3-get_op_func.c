@@ -18,18 +18,18 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 	int i = 0;
-
-
-	/*while ((unsigned int)i < sizeof(ops) / sizeof(ops[0]))*/
+	/* loop 5 times (b/c have 5 operator/ struct) */
 	while (i < 5)
 	{
-
+	/* check if the first char (operator) of s is match with op */
 		if (*s == *ops[i].op)
 		{
+			/* return the match function */
 			return (ops[i].f);
 		}
 		i++;
 	}
+	/* print error when operator is not match */
 	printf("Error\n");
 	exit(99);
 }
