@@ -11,6 +11,7 @@ void print_all(const char * const format, ...)
 {
 	va_list list;
 	int i = 0;
+	char *tmp;
 
 	/* initialize list */
 	va_start(list, format);
@@ -30,7 +31,11 @@ void print_all(const char * const format, ...)
 			printf("%f", va_arg(list, double));
 			break;
 		case 's':
-			printf("%s", va_arg(list, char *));
+			tmp = va_arg(list, char *);
+			if (tmp == NULL)
+				printf("(nil)");
+			else
+				printf("%s", tmp);
 			break;
 		default: /* if not match, compare the next character */
 			i++;
