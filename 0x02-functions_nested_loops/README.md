@@ -1,4 +1,4 @@
-#project 0x02.c -function, nested loops
+# project 0x02.c -function, nested loops
 0. Write a program that prints Holberton, followed by a new line.
 1. Write a function that prints the alphabet, in lowercase,
 followed by a new line.
