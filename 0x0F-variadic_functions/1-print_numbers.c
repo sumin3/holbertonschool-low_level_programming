@@ -15,7 +15,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	if (separator == NULL)
 		tmp = "";
-	tmp = separator;
+	else
+		tmp = separator;
 	/* initialize num_list for n number of arguments */
 	va_start(num_list, n);
 	/* access all the arguments assigned to num_list */
