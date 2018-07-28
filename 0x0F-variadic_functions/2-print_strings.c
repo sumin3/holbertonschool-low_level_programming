@@ -26,7 +26,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		tmp_string = va_arg(string_list, char *);
 		if (tmp_string == NULL)
 			printf("(nil)");
-		printf("%s", tmp_string);
+		else
+			printf("%s", tmp_string);
 		if (i < n - 1)
 			printf("%s", tmp);
 	}
