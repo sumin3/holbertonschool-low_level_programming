@@ -13,45 +13,42 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	char *tmp;
 
-	if (format)
+	va_start(list, format);
+	/* access all the arguments assigned to list */
+	while (format && format[i] != '\0')
 	{
-		va_start(list, format);
-		/* access all the arguments assigned to list */
-		while (format[i] != '\0')
+		/* print the argument with the match data type */
+		switch (format[i])
 		{
-			/* print the argument with the match data type */
-			switch (format[i])
+		case 'c':
+			printf("%c", va_arg(list, int));
+			break;
+		case 'i':
+			printf("%i", va_arg(list, int));
+			break;
+		case 'f':
+			printf("%f", va_arg(list, double));
+			break;
+		case 's':
+			tmp = va_arg(list, char *);
+			if (tmp == NULL)
 			{
-			case 'c':
-				printf("%c", va_arg(list, int));
+				printf("(nil)");
 				break;
-			case 'i':
-				printf("%i", va_arg(list, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(list, double));
-				break;
-			case 's':
-				tmp = va_arg(list, char *);
-				if (tmp == NULL)
-				{
-					printf("(nil)");
-					break;
-				}
-				printf("%s", tmp);
-				break;
-			default: /* if not match, compare the next character */
-				i++;
-				continue;
 			}
-			/* print ', ' follow by each argument */
-			/* except the last one */
-			if (format[i + 1] != '\0')
-				printf(", ");
+			printf("%s", tmp);
+			break;
+		default: /* if not match, compare the next character */
 			i++;
+			continue;
 		}
-		/* clean memory reserved for list */
-		va_end(list);
+		/* print ', ' follow by each argument */
+		/* except the last one */
+		if (format[i + 1] != '\0')
+			printf(", ");
+		i++;
 	}
+	/* clean memory reserved for list */
+	va_end(list);
 	printf("\n");
 }
