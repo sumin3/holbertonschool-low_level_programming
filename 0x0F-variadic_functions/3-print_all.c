@@ -33,9 +33,11 @@ void print_all(const char * const format, ...)
 		case 's':
 			tmp = va_arg(list, char *);
 			if (tmp == NULL)
+			{
 				printf("(nil)");
-			else
-				printf("%s", tmp);
+				break;
+			}
+			printf("%s", tmp);
 			break;
 		default: /* if not match, compare the next character */
 			i++;
