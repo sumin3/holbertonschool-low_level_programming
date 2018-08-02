@@ -29,7 +29,8 @@ list_t *add_node_end(list_t **head, const char *str)
 		else
 			(*head)->len = 0;
 		/* set next node point to null (linked list end at null)*/
-		(*head)->next = NULL;
+		new_node = *head;
+		new_node->next = NULL;
 	}
 	/* if existing node */
 	else
