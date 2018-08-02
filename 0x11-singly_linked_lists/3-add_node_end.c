@@ -1,7 +1,5 @@
 #include "lists.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
 int _strlen(const char *s);
 /**
  * add_node_end - add new node to the end of list
