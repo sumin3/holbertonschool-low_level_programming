@@ -12,9 +12,12 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list string_list;
 	unsigned int i;
 	char *tmp_string;
-
+	const char *tmp;
+	/* if sep is NULL, don't print it by changing it to empty string */
 	if (separator == NULL)
-		return;
+		tmp = "";
+	else /* otherwise, print the separator */
+		tmp = separator;
 	/* initialize string_list for n number of arguments */
 	va_start(string_list, n);
 	/* access all the arguments assigned to string_list */
@@ -23,9 +26,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		tmp_string = va_arg(string_list, char *);
 		if (tmp_string == NULL)
 			printf("(nil)");
-		printf("%s", tmp_string);
+		else
+			printf("%s", tmp_string);
 		if (i < n - 1)
-			printf("%s", separator);
+			printf("%s", tmp);
 	}
 	printf("\n");
 	/* clean memory reserved for string_list */

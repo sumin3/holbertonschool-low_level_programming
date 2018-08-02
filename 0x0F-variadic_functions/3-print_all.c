@@ -13,10 +13,9 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	char *tmp;
 
-	/* initialize list */
 	va_start(list, format);
 	/* access all the arguments assigned to list */
-	while (format[i] != '\0')
+	while (format && format[i] != '\0')
 	{
 		/* print the argument with the match data type */
 		switch (format[i])
@@ -33,15 +32,18 @@ void print_all(const char * const format, ...)
 		case 's':
 			tmp = va_arg(list, char *);
 			if (tmp == NULL)
+			{
 				printf("(nil)");
-			else
-				printf("%s", tmp);
+				break;
+			}
+			printf("%s", tmp);
 			break;
 		default: /* if not match, compare the next character */
 			i++;
 			continue;
 		}
-		/* print ', ' follow by each argument, except the last one */
+		/* print ', ' follow by each argument */
+		/* except the last one */
 		if (format[i + 1] != '\0')
 			printf(", ");
 		i++;
@@ -49,6 +51,4 @@ void print_all(const char * const format, ...)
 	/* clean memory reserved for list */
 	va_end(list);
 	printf("\n");
-
-
 }
