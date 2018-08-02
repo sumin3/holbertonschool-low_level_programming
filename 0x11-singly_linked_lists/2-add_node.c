@@ -4,7 +4,7 @@
 #include <string.h>
 int _strlen(const char *s);
 /**
- * add_node - add new node to the end of list
+ * add_node - add new node to the beginning of list
  * @head: structure pointer for list
  * @str: the new node that need to add
  * Return: return the address of new elements in list
