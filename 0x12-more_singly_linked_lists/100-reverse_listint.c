@@ -6,15 +6,17 @@
  */
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *current_node, *tmp_node;
+	listint_t *prev_node, *next_node;
 
-	current_node = *head;
-	tmp_node = *head;
-	while (current_node->next != NULL)
+	prev_node = NULL;
+	next_node = NULL;
+	while (*head != NULL)
 	{
-		current_node = tmp_node;
-		current_node->next = tmp_node;
-		current_node = current_node->next;
+		next_node = (*head)->next;/* move next node forward*/
+		(*head)->next = prev_node;/* change direction/point backward*/
+		prev_node = *head;/* after change dir,move prev_node forward */
+		*head = next_node; /* move head forward */
 	}
+	*head = prev_node;/* change head points to prev_node instead of NULL */
 	return (*head);
 }
