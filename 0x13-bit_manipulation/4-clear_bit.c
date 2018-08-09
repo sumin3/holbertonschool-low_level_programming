@@ -18,7 +18,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		return (-1);
 	if (index >= sizeof(index) * 8)
 		return (-1);
-	while (i < sizeof(n) * 8)
+	while (i <= sizeof(n) * 8)
 	{
 		*n = tmp_n;
 		digit = (*n >> (sizeof(*n) * 8 - i) & 1) == 0 ? '0' : '1';
