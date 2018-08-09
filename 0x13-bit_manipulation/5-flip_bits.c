@@ -9,9 +9,9 @@
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	int n_digit, m_digit, flip = 0;
-	unsigned long int tmp_n = n, tmp_m = m, i = 0;
+	unsigned long int tmp_n = n, tmp_m = m, i = 1;
 
-	while (i < sizeof(n) * 8)
+	while (i <= sizeof(n) * 8)
 	{
 		n = tmp_n;
 		m = tmp_m;
