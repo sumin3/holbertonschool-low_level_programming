@@ -23,9 +23,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	num_char_read = read(fd, buffer, letters);
 	close(fd);
 	num_char_write = write(1, buffer, num_char_read);
+	free(buffer);
 	if (num_char_write < 0)
 		return (0);
 	else
 		return (num_char_write);
-	free(buffer);
 }
