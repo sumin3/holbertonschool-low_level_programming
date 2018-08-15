@@ -49,7 +49,6 @@ int main(int argc, char **argv)
 		write_count = write(fd2, buffer, 1024);
 		if (write_count == -1)
 		{
-			printf("1 write\n");
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", file_to);
 			exit(99);
