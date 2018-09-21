@@ -1,18 +1,16 @@
-# /*project name*/
-/*description*/
+# 0x17. C - Dynamic libraries
+Dynamic Libraries
 
 ## Purpose
-/*description*/
+To learn what is Dynamic libraries, how to create Dynamic libraries, and how to use it
 
 ## Coding style
-- All python files are interpreted/compiled on Ubuntu 14.04 LTS using python3 (\version 3.4.3) and use the [PEP 8 style (version 1.7.*)](https://github.com/PyC\QA/pycodestyle) for checking coding style
-- All text files are executable with exactly two lines long and are tested on U\buntu 14.04 LTS
 - All C files are compiled on Ubuntu 14.04 LTS and using [Betty Style](https://\github.com/holbertonschool/Betty) for checking coding and documentation styles.
 
 ## Getting started
 To use, first download  this repository into your local machine by issuing the following command in your local terminal. 
 ```
-git clone /* address */
+git clone https://github.com/sumin3/holbertonschool-low_level_programming.git
 ```
 #### Directory
 Each directoy's name includes information below
@@ -21,51 +19,21 @@ Each directoy's name includes information below
 3. concept/topic.
 #### Change Directory
 ```
-cd <directory name>
+cd 0x17-dynamic_libraries 
 ```
 After change current working directory, issue the following command to compile \
 the code
-Change directory into the **/* directory name */** directory and issue the following command to compile
+Change directory into the **0x17-dynamic_libraries** directory and issue the following command to compile
 
-* Run .py file
-```
-python3 <filename.py>
-```h directoy's name includes information below
-or
-```
-./<filename.py>
-```
-* Run text file
-```
-./<filename>
-After change current working directory, issue the following command to compile \
-* Run .c file
-
-gcc -Wall -Werror -Wextra -pedantic <filename.c> -o <output filename>
-```
-Once the .c files are compiled you can run the program by issuing the command
-```
-./<output filename>
-```
-
-## Usage Examples
-```
-/* example */
-```
+## How to create and ues Dynamic libraries?
+for information about this section, go to my [post](https://medium.com/@3_sumin/static-vs-dynamic-libraries-b3a57d13ff06)
 
 ## Files
 Task number | File | Desc
 ---|--|---
-0  |  |
-1  |  |
-2  |  |
-3  |  |
-4  |  |
-5  |  |
-6  |  |
-7  |  |
-8  |  |
-9  |  |
-10 |  |
+0  | ibholberton.so, *holberton.h* |Create the dynamic library libholberton.so containing all the functions
+1  | 1-create_dynamic_lib.sh |Create a script that creates a dynamic library called liball.so from all the .c files that are in the current directory.
+* All files in *Italic characters* are provided by [Holberton School](https://www.holbertonschool.com/) 
+
 ## Authors
 Sumin Yu  
