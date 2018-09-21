@@ -1,5 +1,5 @@
 # 0x16. C - Doubly linked lists
-ow-level programming & Algorithm ― Data structures and Algorithms
+Low-level programming & Algorithm ― Data structures and Algorithms
 
 ## Purpose
 To learn how to print, insert, delete, and find a node in double linked list
@@ -24,7 +24,7 @@ cd 0x16-doubly_linked_lists
 After change current working directory to **0x16-doubly_linked_lists** directory, issue the following command to compile
 
 * Run .c file
-
+```
 gcc -Wall -Werror -Wextra -pedantic <filename.c> -o <output filename>
 ```
 Once the .c files are compiled you can run the program by issuing the command
