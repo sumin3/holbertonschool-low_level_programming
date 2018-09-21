@@ -19,9 +19,9 @@ Each directoy's name includes information below
 3. concept/topic.
 #### Change Directory
 ```
-cd 0x14. C - File I/O
+cd 0x14-file_io
 ```
-After change current working directory to **0x14. C - File I/O** directory, issue the following command to compile
+After change current working directory to **0x14-file_io** directory, issue the following command to compile
 
 * Run .c file
 ```
