@@ -19,9 +19,9 @@ Each directoy's name includes information below
 3. concept/topic.
 #### Change Directory
 ```
-cd 0x13. C - Bit manipulation
+cd 0x13-bit_manipulation
 ```
-After change current working directory to **0x13. C - Bit manipulation** directory, issue the following command to compile
+After change current working directory to **0x13-bit_manipulation** directory, issue the following command to compile
 
 * Run .c file
 ```
