@@ -51,6 +51,6 @@ Task number | File | Desc
 4 | 4-clear_bit.c, *4-main.c* | sets the value of a bit to 0 at a given index.
 5 | 5-flip_bits.c, *5-main.c* | returns the number of bits you would need to flip to get from one number to another.
 6 | 100-get_endianness.c, *100-main.c* | checks the endianness.
-* All main.c files in *Italic characters* and header file *holberton.h* are provided by [Holberton School](https://www.holbertonschool.com/) 
+* All main.c files in *Italic characters* and header file - *holberton.h* are provided by [Holberton School](https://www.holbertonschool.com/) 
 ## Authors
 Sumin Yu  
