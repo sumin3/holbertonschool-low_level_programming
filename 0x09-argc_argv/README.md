@@ -4,7 +4,7 @@ Low-level programming & Algorithm ― Hatching out
 ## Purpose
 - To learn how to use arguments passed to your program
 - To learn what are two prototypes of main that you know of, and in which case do you use one or the other
-- To learn How to use __attribute__((unused)) or (void) to compile functions with unused variables or parameters
+- To learn How to use `__attribute__((unused))` or `(void)` to compile functions with unused variables or parameters
 
 ## Coding style
 - All C files are compiled on Ubuntu 14.04 LTS and using [Betty Style](https://\github.com/holbertonschool/Betty) for checking coding and documentation styles.
