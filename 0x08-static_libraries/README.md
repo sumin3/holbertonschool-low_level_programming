@@ -21,7 +21,7 @@ Each directoy's name includes information below
 
 #### Change Directory
 ```
-cd 0x09-argc_argv
+cd 0x08-static_libraries
 ```
 ## How to create and use Static Libraries?
 for information about this section, go to my [post](https://medium.com/@3_sumin/c-static-libraries-46e7caaa318f)
