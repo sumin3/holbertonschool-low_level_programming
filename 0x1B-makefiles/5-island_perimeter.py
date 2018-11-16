@@ -16,21 +16,21 @@ def island_perimeter(grid):
                 try:
                     if i - 1 >= 0 and grid[i - 1][j] != 1:
                         result += 1
-                except:
+                except IndexError:
                     result += 1
                 try:
                     if grid[i + 1][j] != 1:
                         result += 1
-                except:
+                except IndexError:
                     result += 1
                 try:
                     if grid[i][j + 1] != 1:
                         result += 1
-                except:
+                except IndexError:
                     result += 1
                 try:
                     if j - 1 >= 0 and grid[i][j - 1] != 1:
                         result += 1
-                except:
+                except IndexError:
                     result += 1
     return (result)
