@@ -12,13 +12,10 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (!tree || binary_tree_balance(tree) != 0)
 		return (0);
-	if (tree->left && (binary_tree_balance(tree) == 0))
+	if (tree->left && tree->right)
 	{
-		return (binary_tree_is_perfect(tree->left));
-	}
-	if (tree->right && (binary_tree_balance(tree) == 0))
-	{
-		return (binary_tree_is_perfect(tree->right));
+		return (binary_tree_is_perfect(tree->left) &&
+			binary_tree_is_perfect(tree->right));
 	}
 	return (1);
 }
