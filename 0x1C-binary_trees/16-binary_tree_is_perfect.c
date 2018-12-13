@@ -36,8 +36,18 @@ int check_child(const binary_tree_t *tree)
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
+	int l_height, r_height;
+
 	if (tree && (tree->left || tree->right))
-		return (find_height(tree->left) - find_height(tree->right));
+	{
+		l_height = find_height(tree->left);
+		r_height = find_height(tree->right);
+		if (tree->left)
+			l_height++;
+		if (tree->right)
+			r_height++;
+		return (l_height - r_height);
+	}
 	return (0);
 }
 /**
