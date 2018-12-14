@@ -11,35 +11,29 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 				     const binary_tree_t *second)
 {
 	int first_depth, second_depth;
-	binary_tree_t *tmp = NULL;
 
 	if (!first || !second)
 		return (NULL);
 	first_depth = binary_tree_depth(first);
 	second_depth = binary_tree_depth(second);
-	if (first_depth > second_depth)
+	if (first_depth == second_depth)
+		return (first->parent);
+	while (first_depth > second_depth)
 	{
-		tmp = (binary_tree_t *) first;
-		while (tmp != second->parent)
-		{
-			if (tmp == second)
-				break;
-			tmp = tmp->parent;
-		}
+		first = first->parent;
+		first_depth--;
 	}
-	else if (second_depth > first_depth)
+	while (second_depth > first_depth)
 	{
-		tmp = (binary_tree_t *) second;
-		while (tmp != first->parent)
-		{
-			if (tmp == first)
-				break;
-			tmp = tmp->parent;
-		}
+		second = second->parent;
+		second_depth--;
 	}
-	else
-		tmp = first->parent;
-	return (tmp);
+	while ((second->parent && first->parent) && second != first)
+	{
+		first = first->parent;
+		second = second->parent;
+	}
+	return ((binary_tree_t *) first);
 }
 
 /**
