@@ -25,6 +25,8 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 void print_tree_levelorder(const binary_tree_t *tree, int level,
 			   void (*func)(int))
 {
+    if (tree == NULL)
+        return;
 	if (level == 1)
 		func(tree->n);
 	else
