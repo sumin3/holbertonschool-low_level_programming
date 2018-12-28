@@ -51,13 +51,13 @@ a: 0
 ## Files
 |File| File Hierarchy  | Description
 |---|----|-----
-| `0-Makefile` | [0-Makefile](0-Makefile) | **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> rules: all<br /> variables: none
-| `1-Makefile` | [1-Makefile](1-Makefile) |  **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> rules: all<br /> variables: CC, SRC
-| `2-Makefile` | [2-Makefile](2-Makefile) | **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> rules: all<br /> variables: CC, SRC, OBJ, NAME
-| `3-Makefile` | [3-Makefile](3-Makefile) |  **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> rules: all, clean, oclean, fclean, re <br /> variables: CC, SRC, OBJ, NAME, RM
-| `4-Makefile` | [4-Makefile](4-Makefile) | **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> rules: all, clean, fclean, oclean, re<br /> variables: CC, SRC, OBJ, NAME, RM, CFLAGS
+| `0-Makefile` | [0-Makefile](0-Makefile) | **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> 2. rules: all<br /> 3. variables: none
+| `1-Makefile` | [1-Makefile](1-Makefile) |  **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> 2. rules: all<br /> 3. variables: CC, SRC
+| `2-Makefile` | [2-Makefile](2-Makefile) | **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> 2. rules: all<br /> 3. variables: CC, SRC, OBJ, NAME
+| `3-Makefile` | [3-Makefile](3-Makefile) |  **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> 2. rules: all, clean, oclean, fclean, re <br /> 3. variables: CC, SRC, OBJ, NAME, RM
+| `4-Makefile` | [4-Makefile](4-Makefile) | **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> 2. rules: all, clean, fclean, oclean, re<br /> 3. variables: CC, SRC, OBJ, NAME, RM, CFLAGS
 | `5-island_perimeter.py` | [5-island_perimeter.py](5-island_perimeter.py) | Create a function def island_perimeter(grid): that returns the perimeter of the island described in grid
-| `100-Makefile`| [100-Makefile](100-Makefile) | **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> rules: all, clean, fclean, oclean, re<br /> variables: CC, SRC, OBJ, NAME, RM, CFLAGS <br />use $(RM) for the cleaning up rules <br /> Makefile should not compile if the header file m.h is missing
+| `100-Makefile`| [100-Makefile](100-Makefile) | **Makefile Requirements:** <br /> 1. name of the executable: holberton <br /> 2. rules: all, clean, fclean, oclean, re<br /> 3. variables: CC, SRC, OBJ, NAME, RM, CFLAGS <br />4. use $(RM) for the cleaning up rules <br /> 5. Makefile should not compile if the header file m.h is missing
 
 
 ## Author
